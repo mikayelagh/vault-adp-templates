@@ -5,4 +5,4 @@ vault write transform/template/email-tmpl type=regex pattern="^(\S+)@.*$" alphab
 vault write transform/transformation/email-fpe-transform type=fpe template=email-tmpl tweak_source=internal allowed_roles=*
 vault write transform/role/email-role transformations=email-fpe-transform
 
-vault write transform/encode/email-rbac value="misf12.dfhjw+@ermv12:34kayelg@gmail.com" transformation=email-fpe-transform
+vault write transform/encode/email-role value="misf12.dfhjw+@ermv12:34kayelg@gmail.com" transformation=email-fpe-transform
