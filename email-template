@@ -1,6 +1,6 @@
 https://www.katacoda.com/hashicorp/scenarios/vault-transform
 
-vault write transform/alphabet/email-alphabet alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!#$%&'*+-/=?^_`{|}~(),:;<>@[\] ""
+vault write transform/alphabet/email-alphabet alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!#$%&'*+-/=?^_`{|}~(),:;<>@[\\] \""
 vault write transform/template/email-tmpl type=regex pattern="^(\S+)@.*$" alphabet=email-alphabet
 vault write transform/transformation/email-fpe-transform type=fpe template=email-tmpl tweak_source=internal allowed_roles=*
 vault write transform/role/email-role transformations=email-fpe-transform
